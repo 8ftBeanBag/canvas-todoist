@@ -18,11 +18,6 @@ First, copy the `.env.example` file and rename your copy to .env.
 cp .env.example .env
 ```
 
-Next, install the dependencies
-```bash
-pip install -r requirements.txt
-```
-
 Fill it in with your keys and other info
 
 > ### Canvas API Key
@@ -30,6 +25,11 @@ Fill it in with your keys and other info
 
 > ### Todoist API Key
 > On Todoist desktop go to settings and the API token will be listed under the ```Integrations Tab```. You can also generate an application-specific token at https://developer.todoist.com/appconsole.html
+
+Next, install the dependencies
+```bash
+pip install -r requirements.txt
+```
 
 Now just run the main file and watch your assignments, quizzes, and modules populate in associated sections.
 ```bash
