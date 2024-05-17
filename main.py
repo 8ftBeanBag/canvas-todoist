@@ -2,8 +2,8 @@
 # Import Libraries
 from dotenv import load_dotenv, dotenv_values
 import inquirer
-from Canvas import Canvas
-from Todoist import Todoist
+from apis.Canvas import Canvas
+from apis.Todoist import Todoist
 import re
 from alive_progress import alive_bar
 
