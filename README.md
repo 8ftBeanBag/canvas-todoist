@@ -15,7 +15,7 @@ This script imports
 
 First, copy the `.env.local` file and rename your copy to .env.
 ```bash
-cp .env.local .env
+cp .env.example .env
 ```
 
 Next, install the dependencies
