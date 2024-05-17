@@ -1,4 +1,5 @@
 import time
+from datetime import datetime
 from todoist_api_python.api import TodoistAPI
 
 class LimitReachedError(Exception):
@@ -70,7 +71,8 @@ class Todoist:
             if canvas_assignment.due_at is None:
                 labels.append("no due date")
                 
-            if canvas_assignment.unlock_at is not None:
+            if canvas_assignment.unlock_at is not None and \
+               canvas_assignment.unlock_at > datetime.now().isoformat():
                 labels.append("locked")
                 content += f" unlocks on {canvas_assignment.unlock_at}"
             
