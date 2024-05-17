@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
-# Import Libraries
-from dotenv import load_dotenv, dotenv_values
+import re
 import inquirer
+from dotenv import load_dotenv, dotenv_values
+from alive_progress import alive_bar
 from apis.Canvas import Canvas
 from apis.Todoist import Todoist
-import re
-from alive_progress import alive_bar
 
-# Load configuration files and creates a list of course_ids
+# Load config from .env file
 load_dotenv()
 
 def main():
@@ -25,7 +23,7 @@ def main():
     # get all tasks and map them to canvas ids
     current_tasks = todoist_api.get_tasks()
     current_task_canvas_ids = [
-        int(re.search(r'\[ID:(.*?)\]', ct.content).group(1))
+        int(re.search(r'\[ID:(.*?)\]', ct.content).group(1))    # Grabs anything between '[ID:' and ']'
         for ct in current_tasks 
         if ct.content.find("[ID:") != -1
     ]
