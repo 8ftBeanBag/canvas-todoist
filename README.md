@@ -13,7 +13,7 @@ This script imports
 
 ## The Basics
 
-First, copy the `.env.local` file and rename your copy to .env.
+First, copy the `.env.example` file and rename your copy to .env.
 ```bash
 cp .env.example .env
 ```
